@@ -1,0 +1,140 @@
+Q1. Create a Pandas Series that contains the following data: 4, 8, 15, 16, 23, and 42. Then, print the series.
+ans.import pandas as pd
+
+# create a Pandas Series with given data
+data = [4, 8, 15, 16, 23, 42]
+series = pd.Series(data)
+
+# print the Series
+print(series)
+
+
+Q2. Create a variable of list type containing 10 elements in it, and apply pandas.Series function on the
+variable print it.
+ANS. import pandas as pd
+
+# create a list with 10 elements
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# create a Pandas Series from the list
+my_series = pd.Series(my_list)
+
+# print the Series
+print(my_series)
+
+
+
+
+
+Q3. Create a Pandas DataFrame that contains the following data:
+Name              age            gender
+Alice             25             Female
+Bob               30             Male
+Claire            27             Female 
+Then, print the DataFrame.
+
+
+ANS.
+import pandas as pd
+
+# create a dictionary with the data
+data = {
+    'Name': ['Alice', 'Bob', 'Claire'],
+    'age': [25, 30, 27],
+    'gender': ['Female', 'Male', 'Female']
+}
+
+# create a Pandas DataFrame from the dictionary
+df = pd.DataFrame(data)
+
+# print the DataFrame
+print(df)
+
+
+
+
+Q4. What is ‘DataFrame’ in pandas and how is it different from pandas.series? Explain with an example.
+ANS. import pandas as pd
+
+# create a Pandas Series
+s = pd.Series([1, 2, 3])
+
+# create a Pandas DataFrame
+df = pd.DataFrame({
+    'A': [1, 2, 3],
+    'B': [4, 5, 6],
+    'C': [7, 8, 9]
+})
+
+# print the Series and the DataFrame
+print(s)
+print(df)
+
+
+
+
+
+Q5. What are some common functions you can use to manipulate data in a Pandas DataFrame? Can
+you give an example of when you might use one of these functions?
+ANS. There are many functions available in Pandas that can be used to manipulate data in a DataFrame. Here are some common ones:
+
+head(): returns the first n rows of a DataFrame. Useful for quickly inspecting the data and getting a sense of its structure.
+
+tail(): returns the last n rows of a DataFrame.
+
+describe(): provides summary statistics for each numerical column in a DataFrame.
+
+info(): provides information about a DataFrame, including the number of non-null values in each column and the data type of each column.
+
+sort_values(): sorts the DataFrame by one or more columns.
+
+groupby(): groups the DataFrame by one or more columns and allows you to perform aggregations on each group.
+
+pivot_table(): creates a spreadsheet-style pivot table based on the DataFrame.
+
+merge(): merges two DataFrames on a common column or index.
+
+apply(): applies a function to each row or column of the DataFrame.
+
+fillna(): fills missing values in the DataFrame with a specified value or method.
+
+drop(): removes specified rows or columns from the DataFrame.
+
+rename(): renames columns or indexes in the DataFrame.
+
+
+import pandas as pd
+
+df = pd.read_csv('sales.csv')
+
+product_sales = df.groupby('Product')['Sales'].sum()
+
+print(product_sales)
+
+
+
+
+
+
+Q6. Which of the following is mutable in nature Series, DataFrame, Panel?
+ANS. In Pandas, both Series and DataFrame are mutable, which means their values can be changed after they are created. However, Panel is a 3-dimensional data 
+structure that is considered deprecated since version 0.25.0 and has been removed in version 1.0.0. Therefore, it is not relevant to consider whether it
+is mutable or not.
+
+
+Q7. Create a DataFrame using multiple Series. Explain with an example.
+ANS. import pandas as pd
+
+# create a Series for each column
+names = pd.Series(['Alice', 'Bob', 'Claire'])
+ages = pd.Series([25, 30, 27])
+genders = pd.Series(['Female', 'Male', 'Female'])
+
+# create a dictionary of Series
+data = {'Name': names, 'Age': ages, 'Gender': genders}
+
+# create a DataFrame from the dictionary of Series
+df = pd.DataFrame(data)
+
+# print the DataFrame
+print(df)
